@@ -1,0 +1,12 @@
+version: '3.0'
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+    - 5555:5555
+    environment:
+      - TARGET_PROXY=http://127.0.0.1:8080
+      - PROXY_PORT=5555
+      - PREFIX_PROXY_PATH=/
